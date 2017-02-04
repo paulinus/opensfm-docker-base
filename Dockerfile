@@ -15,7 +15,6 @@ RUN apt-get update \
         libsuitesparse-dev \
         python-dev \
         python-numpy \
-        python-opencv \
         python-pip \
         python-pyexiv2 \
         python-pyproj \
@@ -24,6 +23,20 @@ RUN apt-get update \
         wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+# Install OpenCV 3
+RUN \
+    mkdir -p /source && cd /source && \
+    wget https://github.com/Itseez/opencv/archive/3.2.0.zip && \
+    unzip 3.2.0.zip && \
+    cd /source/opencv-3.2.0 && \
+    mkdir -p build && cd build && \
+    cmake .. -DOPENMP=OFF && \
+    make install && \
+    cd / && \
+    rm -rf /source/opencv-3.2.0 && \
+    rm -f /source/3.2.0.tar.gz
 
 
 # Install Ceres from source
