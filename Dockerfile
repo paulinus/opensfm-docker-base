@@ -43,7 +43,7 @@ RUN \
              -DBUILD_opencv_aruco=OFF \
              -DBUILD_opencv_bgsegm=OFF \
              -DBUILD_opencv_bioinspired=OFF \
-             -DBUILD_opencv_calib3d=OFF \
+             -DBUILD_opencv_calib3d=ON \
              -DBUILD_opencv_ccalib=OFF \
              -DBUILD_opencv_cnn_3dobj=OFF \
              -DBUILD_opencv_cudaarithm=OFF \
