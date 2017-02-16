@@ -20,6 +20,7 @@ RUN apt-get update \
         python-pyproj \
         python-scipy \
         python-yaml \
+        vim \
         wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
