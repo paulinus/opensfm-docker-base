@@ -46,6 +46,7 @@ RUN \
              -DBUILD_opencv_calib3d=ON \
              -DBUILD_opencv_ccalib=OFF \
              -DBUILD_opencv_cnn_3dobj=OFF \
+             -DBUILD_opencv_contrib_world=OFF \
              -DBUILD_opencv_cudaarithm=OFF \
              -DBUILD_opencv_cudabgsegm=OFF \
              -DBUILD_opencv_cudacodec=OFF \
