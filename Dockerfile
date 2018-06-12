@@ -29,15 +29,15 @@ RUN apt-get update \
 # Install Ceres from source
 RUN \
     mkdir -p /source && cd /source && \
-    wget http://ceres-solver.org/ceres-solver-1.10.0.tar.gz && \
-    tar xvzf ceres-solver-1.10.0.tar.gz && \
-    cd /source/ceres-solver-1.10.0 && \
+    wget http://ceres-solver.org/ceres-solver-1.14.0.tar.gz && \
+    tar xvzf ceres-solver-1.14.0.tar.gz && \
+    cd /source/ceres-solver-1.14.0 && \
     mkdir -p build && cd build && \
     cmake .. -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF && \
     make install && \
     cd / && \
-    rm -rf /source/ceres-solver-1.10.0 && \
-    rm -f /source/ceres-solver-1.10.0.tar.gz
+    rm -rf /source/ceres-solver-1.14.0 && \
+    rm -f /source/ceres-solver-1.14.0.tar.gz
 
 
 # Install opengv from source
