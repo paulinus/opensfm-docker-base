@@ -45,11 +45,11 @@ RUN \
     mkdir -p /source && cd /source && \
     git clone https://github.com/paulinus/opengv.git && \
     cd /source/opengv && \
+    git submodule update --init --recursive && \
     mkdir -p build && cd build && \
     cmake .. -DBUILD_TESTS=OFF \
              -DBUILD_PYTHON=ON \
-             -DBUILD_FOR_PYTHON3=ON \
-             -DBOOST_PYTHON3_COMPONENT=python-py36 \
+             -DPYBIND11_PYTHON_VERSION=3.6 \
              -DPYTHON_INSTALL_DIR=/usr/local/lib/python3.6/dist-packages/ \
              && \
     make install && \
