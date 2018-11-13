@@ -9,7 +9,6 @@ RUN export DEBIAN_FRONTEND=noninteractive \
         cmake \
         git \
         libatlas-base-dev \
-        libboost-python-dev \
         libeigen3-dev \
         libgoogle-glog-dev \
         libopencv-dev \
