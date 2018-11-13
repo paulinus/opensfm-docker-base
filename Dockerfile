@@ -8,7 +8,6 @@ RUN apt-get update \
         cmake \
         git \
         libatlas-base-dev \
-        libboost-python-dev \
         libeigen3-dev \
         libgoogle-glog-dev \
         libopencv-dev \
