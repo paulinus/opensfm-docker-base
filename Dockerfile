@@ -25,21 +25,18 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
-# Install Ceres from source
+# ceres
 RUN \
     mkdir -p /source && cd /source && \
-    wget http://ceres-solver.org/ceres-solver-1.14.0.tar.gz && \
-    tar xvzf ceres-solver-1.14.0.tar.gz && \
+    curl -L http://ceres-solver.org/ceres-solver-1.14.0.tar.gz | tar xz && \
     cd /source/ceres-solver-1.14.0 && \
     mkdir -p build && cd build && \
     cmake .. -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF && \
-    make install && \
-    cd / && \
-    rm -rf /source/ceres-solver-1.14.0 && \
-    rm -f /source/ceres-solver-1.14.0.tar.gz
+    make -j4 install && \
+    cd / && rm -rf /source/ceres-solver-1.14.0
 
 
-# Install opengv from source
+# opengv
 RUN \
     mkdir -p /source && cd /source && \
     git clone https://github.com/paulinus/opengv.git && \
@@ -48,8 +45,7 @@ RUN \
     mkdir -p build && cd build && \
     cmake .. -DBUILD_TESTS=OFF -DBUILD_PYTHON=ON -DPYBIND11_PYTHON_VERSION=2.7 && \
     make install && \
-    cd / && \
-    rm -rf /source/opengv
+    cd / && rm -rf /source/opengv
 
 
 # Install python requirements
