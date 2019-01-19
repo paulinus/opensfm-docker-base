@@ -64,4 +64,6 @@ RUN \
                  python-dateutil==2.6.0 \
                  PyYAML==3.12 \
                  scipy \
-                 xmltodict==0.10.2
+                 xmltodict==0.10.2 \
+                 loky \
+                 repoze.lru
