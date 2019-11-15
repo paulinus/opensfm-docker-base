@@ -1,5 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install apt-getable dependencies
 RUN apt-get update \
