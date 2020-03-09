@@ -37,22 +37,6 @@ RUN \
     cd / && rm -rf /source/ceres-solver-1.14.0
 
 
-# opengv
-RUN \
-    mkdir -p /source && cd /source && \
-    git clone https://github.com/paulinus/opengv.git && \
-    cd /source/opengv && \
-    git submodule update --init --recursive && \
-    mkdir -p build && cd build && \
-    cmake .. -DBUILD_TESTS=OFF \
-             -DBUILD_PYTHON=ON \
-             -DPYBIND11_PYTHON_VERSION=3.6 \
-             -DPYTHON_INSTALL_DIR=/usr/local/lib/python3.6/dist-packages/ \
-             && \
-    make install && \
-    cd / && rm -rf /source/opengv
-
-
 # Install python requirements
 RUN \
     pip3 install exifread==2.1.2 \
