@@ -56,6 +56,7 @@ RUN \
 # Install python requirements
 RUN \
     pip3 install exifread==2.1.2 \
+                 joblib==0.14.1 \
                  gpxpy==1.1.2 \
                  networkx==1.11 \
                  numpy \
